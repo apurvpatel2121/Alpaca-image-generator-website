@@ -1,0 +1,98 @@
+.main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    color: #fff;
+
+}
+
+.header {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.mainSection {
+    position: relative;
+    margin-top: 2rem;
+    width: 520px;
+}
+
+.background {
+    display: block;
+}
+
+.neck,
+.nose,
+.accessories,
+.mouth,
+.leg,
+.hair,
+.ears,
+.eyes {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+/* all buttons */
+.buttonSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+}
+
+.btn{
+    padding: 6px 12px;
+    border-radius: 2rem;
+    letter-spacing: 1px;
+    border: none;
+    background-color: inherit;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.btn:hover{
+    background-color: #fff;
+    border-color: #fff;
+    color: black;
+}
+
+.download{
+    width: 520px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.downloadBtn{
+    font-family: "Alfa Slab One",cursive;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: black;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.title{
+    font-size: 1.65rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.buttons{
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
