@@ -3,7 +3,6 @@
     margin: auto;
     padding: 2rem;
     color: #fff;
-
 }
 
 .header {
@@ -16,6 +15,18 @@ img {
     display: block;
     width: 100%;
 }
+
+.container{
+    display: flex;
+    gap: 2rem;
+}
+
+@media screen and (max-width:1248px){
+    .container{
+        flex-direction: column;
+    }
+}
+
 
 .mainSection {
     position: relative;
@@ -45,8 +56,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem;
-
+    padding-top: 2rem;
 }
 
 .btn{
@@ -63,7 +73,7 @@ img {
 }
 
 
-.btn:hover,.selectedButton{
+.btn:hover,.active{
     background-color: #fff;
     border-color: #fff;
     color: black;
@@ -98,3 +108,4 @@ img {
     gap: 10px;
     flex-wrap: wrap;
 }
+
