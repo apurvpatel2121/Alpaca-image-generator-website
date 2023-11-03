@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { accessories } from "./assets/data"
-
+import { toPng } from 'html-to-image'
+import download from 'downloadjs'
 
 function App() {
   const [data, setData] = useState(accessories)
@@ -24,6 +25,16 @@ function App() {
     })
     setData(dataClone)
   }, [])
+
+
+  function downloadImage(){
+    console.log("clicked")
+    const alpacaCanvasNode = document.getElementById('mainSection')
+    toPng(alpacaCanvasNode).then(dataUrl => {
+      download(dataUrl, 'my-alpaca.png')
+    })
+  }
+
 
   function handleChange(item) {
     console.log("first")
@@ -78,7 +89,7 @@ function App() {
     <div className='container'>
       
       <div className='leftContainer'>
-        <section className='mainSection'>
+        <section className='mainSection' id='mainSection'>
           <img src={"images/backgrounds/" + bg + ".png"} alt="" className='background' />
           <img src={"images/ears/" + ears + ".png"} alt="" className='ears' />
           <img src={"images/hair/" + hair + ".png"} alt="" className='hair' />
@@ -92,7 +103,7 @@ function App() {
         </section>
 
         <div className='download'>
-          <button className='btn downloadBtn'>Download</button>
+          <button className='btn downloadBtn' onClick={()=>downloadImage()}>Download</button>
         </div>
       </div>
 
@@ -119,7 +130,7 @@ function App() {
             <hr />
           </div>
           <div className='backgroundContainer'>
-            <h1 className='title'>Backgrounds</h1>
+            <h1 className='title'>{data[index].label}</h1>
             <div className='buttons'>
               {
                 data[index].items.map((item, index) => {
