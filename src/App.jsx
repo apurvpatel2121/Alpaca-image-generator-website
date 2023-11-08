@@ -36,11 +36,11 @@ function App() {
   }
 
 
-  function handleChange(item) {
-    console.log("first")
+  function handleChange(item,i) {
+
     data[index].items.map(i => i.selected = false)
     item.selected = true
-    console.log(data[index].label)
+
     switch (data[index].label) {
       case "backgrounds":
         setBg(item.img)
@@ -113,13 +113,11 @@ function App() {
             <h1 className='title'>Accessorize your Alpaca</h1>
             <div className='buttons'>
               {
-                data.map((attribute, index) => {
+                data.map((attribute, i) => {
                   return (
-                    <button key={index} className={attribute.selected ? "btn active" : "btn"}
+                    <button key={i} className={index===i ? "btn active" : "btn"}
                       onClick={() => {
-                        data.map(i => i.selected = false);
-                        setIndex(index)
-                        data[index].selected = true
+                        setIndex(i)
                       }}>{attribute.label}</button>
                   )
                 })
@@ -133,10 +131,10 @@ function App() {
             <h1 className='title'>{data[index].label}</h1>
             <div className='buttons'>
               {
-                data[index].items.map((item, index) => {
+                data[index].items.map((item, i) => {
                   return (
-                    <button key={index} className={item.selected ? "btn active" : "btn"} onClick={(e) => {
-                      handleChange(item)
+                    <button key={i} className={item.selected ? "btn active" : "btn"} onClick={(e) => {
+                      handleChange(item,i)
                     }}>{item.img}</button>
                   )
                 })
