@@ -52,7 +52,7 @@ function App() {
 
       {/* navbar */}
       <nav>
-        <h1 className='header'>Alpaca Image Generator</h1>
+        <h1 className='header'>Alpaca Image Generator <span className='nameTag' >By Apurv Patel</span></h1> 
       </nav>
 
       <div className='container'>

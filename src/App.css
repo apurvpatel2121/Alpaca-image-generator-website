@@ -6,6 +6,7 @@
 }
 
 .header {
+    min-width: 600px;
     font-size: 3rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -27,7 +28,6 @@ img {
         flex-direction: column;
     }
 }
-
 
 .mainSection {
     position: relative;
@@ -109,3 +109,14 @@ img {
     flex-wrap: wrap;
 }
 
+
+.nameTag{
+    font-size: 1.5rem;
+    color: antiquewhite;
+}
+
+@media screen and (max-width:678px){
+    .header{
+        font-size: 1.5rem;
+    }
+}
