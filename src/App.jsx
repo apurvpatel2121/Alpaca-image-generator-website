@@ -3,6 +3,8 @@ import './App.css'
 import data from "./assets/data"
 import { toPng } from 'html-to-image'
 import download from 'downloadjs'
+import AlpacaImage from './components/AlpacaImage'
+import Button from './components/Button'
 
 function App() {
   const [index, setIndex] = useState(0)
@@ -59,12 +61,7 @@ function App() {
           <section className='mainSection' id='mainSection'>
             {data.map((item) => {
               return (
-                <img
-                  key={item.label}
-                  // src={`images/${item.label}/${images[item.label].img}.png`}
-                  src={getImageUrl(item)}
-                  className={`${item.label}`}
-                />
+                <AlpacaImage key={item.label} item={item} getImageUrl={getImageUrl} />
               )
             })}
           </section>
@@ -82,11 +79,12 @@ function App() {
                 {
                   data.map((attribute, i) => {
                     return (
-
-                      <button key={i} className={index === i ? "btn active" : "btn"}
-                        onClick={() => {
-                          setIndex(i)
-                        }}>{attribute.label}</button>
+                      <Button
+                      key={i} 
+                      label={attribute.label}
+                      active={index === i}
+                      onclick={() => {setIndex(i)}}
+                      />
                     )
                   })
                 }
@@ -101,12 +99,15 @@ function App() {
                 {
                   data[index].items.map((item, i) => {
                     return (
-                      <button key={item} className={images[data[index].label]?.btn === i ? "btn active" : "btn"} onClick={(e) => {
-                        handleChange(item, i)
-                      }}>{item}</button>
+                      <Button 
+                      key={item} 
+                      label={item}
+                      active={images[data[index].label]?.btn === i} 
+                      onclick={(e) => {handleChange(item, i)}}
+                      />
                     )
                   })
-                }
+                } 
               </div>
             </div>
           </section>
