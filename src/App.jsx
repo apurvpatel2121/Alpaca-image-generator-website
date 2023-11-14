@@ -40,7 +40,7 @@ function App() {
 
   function getImageUrl(item) {
     const imageUrl = useMemo(() => {
-      return `i/mages/${item.label}/${images[item.label]?.img ?? 'default'}.png`
+      return `/images/${item.label}/${images[item.label]?.img ?? 'default'}.png`
     }, [images])
     return imageUrl;
   }
